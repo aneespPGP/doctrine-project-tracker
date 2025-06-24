@@ -17,7 +17,7 @@ function App() {
   const handleLogin = (username, password) => {
     // Static login check with === as requested
     // Note: In a real app, this should use a more secure approach
-    if (username === 'admin' && password === 'admin1234') {
+    if (username === 'admin' && password === 'adminpass') {
       setIsLoggedIn(true)
       localStorage.setItem('isLoggedIn', 'true')
       return true
