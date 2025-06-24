@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './ProjectForm.css';
 
 function ProjectForm({ onAddProject }) {
   const [projectName, setProjectName] = useState('');
@@ -46,13 +47,14 @@ function ProjectForm({ onAddProject }) {
   
   return (
     <div className="project-form">
-      <h2>Add New Project</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="project-name">Project Name</label>
+      <h2 className="project-form__title">➕ Add New Project</h2>
+      <form className="project-form__form" onSubmit={handleSubmit}>
+        <div className="project-form__group">
+          <label htmlFor="project-name" className="project-form__label">📝 Project Name</label>
           <input
             type="text"
             id="project-name"
+            className="project-form__input"
             value={projectName}
             placeholder="Enter project name"
             onChange={(e) => setProjectName(e.target.value)}
@@ -60,25 +62,30 @@ function ProjectForm({ onAddProject }) {
           />
         </div>
         
-        <div className="form-group">
-          <label htmlFor="college-name">College</label>
+        <div className="project-form__group">
+          <label htmlFor="college-name" className="project-form__label">🏫 College Type</label>
           <select
             id="college-name"
+            className={`project-form__select ${
+              collegeName === 'Boys College' ? 'project-form__select--boys' : 
+              collegeName === 'Girls College' ? 'project-form__select--girls' : ''
+            }`}
             value={collegeName}
             onChange={(e) => setCollegeName(e.target.value)}
             disabled={loading}
           >
-            <option value="">Select a college</option>
-            <option value="Boys College">Boys College</option>
-            <option value="Girls College">Girls College</option>
+            <option value="">Select a college type</option>
+            <option value="Boys College">👨‍🎓 Boys College</option>
+            <option value="Girls College">👩‍🎓 Girls College</option>
           </select>
         </div>
         
-        <div className="form-group">
-          <label htmlFor="price">Price (Rs)</label>
+        <div className="project-form__group">
+          <label htmlFor="price" className="project-form__label">💰 Price (Rs)</label>
           <input
             type="number"
             id="price"
+            className="project-form__input"
             min="0"
             step="0.01"
             value={price}
@@ -88,13 +95,13 @@ function ProjectForm({ onAddProject }) {
           />
         </div>
         
-        {error && <p className="error-message">{error}</p>}
+        {error && <p className="project-form__error">⚠️ {error}</p>}
         <button 
           type="submit" 
-          className="submit-btn" 
+          className="project-form__button" 
           disabled={loading}
         >
-          {loading ? 'Adding...' : 'Add Project'}
+          {loading ? '⏳ Adding...' : '✅ Add Project'}
         </button>
       </form>
     </div>

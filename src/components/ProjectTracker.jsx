@@ -3,6 +3,7 @@ import { collection, addDoc, getDocs, deleteDoc, doc, query, orderBy } from 'fir
 import { db } from '../firebase';
 import ProjectForm from './ProjectForm';
 import ProjectTable from './ProjectTable';
+import './ProjectTracker.css';
 
 function ProjectTracker({ onLogout }) {
   const [projects, setProjects] = useState([]);
@@ -62,17 +63,16 @@ function ProjectTracker({ onLogout }) {
   
   return (
     <div>
-      <div className="tracker-header">
-        <h1>Doctrine Project Tracker</h1>
-        <button onClick={onLogout} className="logout-btn">Logout</button>
+      <div className="project-tracker__header">
+        <h1 className="project-tracker__title">Doctrine Project Tracker</h1>
+        <button onClick={onLogout} className="project-tracker__logout-btn">Logout</button>
       </div>
       
-      {/* Wrap form and table in a container for side-by-side layout */}
-      <div className="tracker-content">
+      <div className="project-tracker__content">
         <ProjectForm onAddProject={addProject} />
         
         {loading ? (
-          <div className="loading">Loading projects...</div>
+          <div className="project-tracker__loading">Loading projects...</div>
         ) : (
           <ProjectTable projects={projects} onDeleteProject={deleteProject} />
         )}

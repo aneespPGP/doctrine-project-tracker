@@ -1,0 +1,452 @@
+/* Project Table Component Styles */
+.project-table__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.project-table__title {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.project-table__pdf-btn {
+  background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);
+  color: #1a2530;
+  font-size: 0.9rem;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.project-table__pdf-btn:hover {
+  background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.project-table__pdf-btn:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.project-table__college-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.project-table__stat-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid;
+}
+
+.project-table__stat-card--boys {
+  border-left-color: #3498db;
+  background: linear-gradient(135deg, #f8fbff 0%, #e3f2fd 100%);
+}
+
+.project-table__stat-card--girls {
+  border-left-color: #e91e63;
+  background: linear-gradient(135deg, #fef7f7 0%, #fce4ec 100%);
+}
+
+.project-table__stat-title {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+.project-table__stat-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.project-table__stat-label {
+  color: #666;
+  font-weight: 500;
+}
+
+.project-table__stat-value {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.project-table__container {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.project-table__pdf-container {
+  width: 100%;
+}
+
+.project-table__report-header {
+  display: none;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.project-table__report-title {
+  color: #333;
+  font-size: 18pt;
+  margin-bottom: 5px;
+}
+
+.project-table__report-date {
+  color: #7f8c8d;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.project-table__report-divider {
+  border: 0;
+  height: 2px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+  margin: 1.5rem 0;
+}
+
+.project-table__pdf-stats {
+  display: none;
+  margin-bottom: 2rem;
+}
+
+.project-table__pdf-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.project-table__pdf-stat-section {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.project-table__pdf-stat-title {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.project-table__pdf-stat-text {
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.project-table__table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #eee;
+}
+
+.project-table__th,
+.project-table__td {
+  padding: 1rem 0.75rem;
+  text-align: left;
+}
+
+.project-table__th {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  position: sticky;
+  top: 0;
+}
+
+.project-table__th:first-child {
+  border-top-left-radius: 8px;
+}
+
+.project-table__th:last-child {
+  border-top-right-radius: 8px;
+}
+
+.project-table__th--sortable {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  transition: background-color 0.2s;
+  padding: 0 2rem;
+}
+
+.project-table__th--sortable:hover {
+  background-color: rgba(5, 5, 5, 0.925);
+}
+
+.project-table__tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.project-table__tr:hover {
+  background-color: #e9f7fe;
+}
+
+.project-table__tr--boys {
+  background-color: rgba(33, 150, 243, 0.02);
+}
+
+.project-table__tr--girls {
+  background-color: rgba(233, 30, 99, 0.02);
+}
+
+.project-table__tr--boys:hover {
+  background-color: rgba(33, 150, 243, 0.08);
+}
+
+.project-table__tr--girls:hover {
+  background-color: rgba(233, 30, 99, 0.08);
+}
+
+.project-table__td {
+  border-bottom: 1px solid #eee;
+}
+
+.project-table__college-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.project-table__college-badge--boys {
+  background-color: #e3f2fd;
+  color: #1976d2;
+  border: 1px solid #bbdefb;
+}
+
+.project-table__college-badge--girls {
+  background-color: #fce4ec;
+  color: #c2185b;
+  border: 1px solid #f8bbd9;
+}
+
+.project-table__price-column {
+  color: #2ecc71;
+  font-weight: 500;
+}
+
+.project-table__reduced-price-column {
+  color: #f1c40f;
+  font-weight: 500;
+}
+
+.project-table__delete-btn {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.project-table__delete-btn:hover {
+  background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.project-table__total-row {
+  background-color: #f8f9fa !important;
+  font-weight: 600;
+}
+
+.project-table__total-row .project-table__td {
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+  border-top: 2px solid #ddd;
+}
+
+.project-table__empty-message {
+  text-align: center;
+  padding: 2rem;
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+.project-table__report-summary {
+  display: none;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border-left: 4px solid #2c3e50;
+}
+
+.project-table__summary-title {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.project-table__summary-text {
+  margin-bottom: 0.5rem;
+}
+
+.project-table__summary-note {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-top: 1rem;
+}
+
+.project-table__report-footer {
+  display: none;
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .project-table__college-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .project-table__stat-card {
+    padding: 1rem;
+  }
+  
+  .project-table__table {
+    font-size: 0.9rem;
+  }
+  
+  .project-table__college-badge {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.4rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .project-table__header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .project-table__container {
+    padding: 2rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .project-table__no-print,
+  .project-table__pdf-btn,
+  .project-table__delete-btn,
+  .project-table__header,
+  .project-table__college-stats {
+    display: none !important;
+  }
+  
+  .project-table__report-header,
+  .project-table__report-summary,
+  .project-table__report-footer,
+  .project-table__pdf-stats {
+    display: block !important;
+  }
+  
+  .project-table__pdf-stats-grid {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .project-table__pdf-stat-section {
+    margin-bottom: 15px;
+    border: 1px solid #333;
+    padding: 10px;
+  }
+  
+  .project-table__container {
+    box-shadow: none;
+    padding: 0;
+    background: white;
+  }
+  
+  .project-table__pdf-container {
+    padding: 15px;
+    max-width: 100%;
+  }
+  
+  .project-table__table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #333;
+    font-size: 10pt;
+  }
+  
+  .project-table__th,
+  .project-table__td {
+    border: 1px solid #333;
+    padding: 6px;
+    text-align: left;
+  }
+  
+  .project-table__th {
+    background-color: #f0f0f0 !important;
+    color: #333 !important;
+    font-weight: bold;
+  }
+  
+  .project-table__college-badge {
+    background: none !important;
+    border: none !important;
+    color: #333 !important;
+    padding: 0;
+  }
+  
+  .project-table__tr--boys,
+  .project-table__tr--girls {
+    background-color: transparent !important;
+  }
+  
+  .project-table__report-summary {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #333;
+    background-color: #f9f9f9 !important;
+  }
+  
+  .project-table__table {
+    page-break-inside: auto;
+  }
+  
+  .project-table__tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+  
+  .project-table__table thead {
+    display: table-header-group;
+  }
+  
+  .project-table__table tfoot {
+    display: table-footer-group;
+  }
+}
