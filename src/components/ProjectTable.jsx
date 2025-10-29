@@ -14,7 +14,7 @@ function ProjectTable({ projects, onDeleteProject }) {
   
   // Calculate total prices
   const totalFullPrice = projects.reduce((sum, project) => sum + project.price, 0);
-  const total65Percent = projects.reduce((sum, project) => sum + (project.price * 0.65), 0);
+  const total60Percent = projects.reduce((sum, project) => sum + (project.price * 0.60), 0);
   
   // Format date for the report
   const formattedDate = new Date().toLocaleDateString('en-US', {
@@ -55,7 +55,7 @@ function ProjectTable({ projects, onDeleteProject }) {
                     <th>Project Name</th>
                     <th>College</th>
                     <th>Full Price</th>
-                    <th>65% Price</th>
+                    <th>60% Price</th>
                     <th className="action-column">Actions</th>
                   </tr>
                 </thead>
@@ -65,7 +65,7 @@ function ProjectTable({ projects, onDeleteProject }) {
                       <td>{project.projectName}</td>
                       <td>{project.collegeName}</td>
                       <td className="price-column">Rs {project.price.toFixed(2)}</td>
-                      <td className="reduced-price-column">Rs {(project.price * 0.65).toFixed(2)}</td>
+                      <td className="reduced-price-column">Rs {(project.price * 0.60).toFixed(2)}</td>
                       <td className="action-column">
                         <button 
                           onClick={() => onDeleteProject(project.id)} 
@@ -82,7 +82,7 @@ function ProjectTable({ projects, onDeleteProject }) {
                   <tr className="total-row">
                     <td colSpan={2}>Total</td>
                     <td className="price-column">Rs {totalFullPrice.toFixed(2)}</td>
-                    <td className="reduced-price-column">Rs {total65Percent.toFixed(2)}</td>
+                    <td className="reduced-price-column">Rs {total60Percent.toFixed(2)}</td>
                     <td className="action-column"></td>
                   </tr>
                 </tfoot>
@@ -93,8 +93,8 @@ function ProjectTable({ projects, onDeleteProject }) {
                 <h3>Payment Summary</h3>
                 <p>Total Projects: {projects.length}</p>
                 <p>Total Full Amount: Rs {totalFullPrice.toFixed(2)}</p>
-                <p>Total 65% Amount: Rs {total65Percent.toFixed(2)}</p>
-                <p className="summary-note">* 65% price represents the allocated payment amount per project.</p>
+                <p>Total 60% Amount: Rs {total60Percent.toFixed(2)}</p>
+                <p className="summary-note">* 60% price represents the allocated payment amount per project.</p>
               </div>
               
               <div className="report-footer">
